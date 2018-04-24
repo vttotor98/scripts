@@ -1,0 +1,30 @@
+#DOCKERFILE pour installer un noeud de la blockchain ethereum
+#Author : Victor TIREBAQUE for Agaetis Clermont-Ferrand
+
+
+#A partir d'une image Ubuntu
+RUN ubuntu
+
+
+#Installation des différents paquets et dépôts nécessaires
+
+#Installation de software-properties-common en premier car contient add-apt-repository
+RUN apt-get update && apt-get upgrade && apt-get install software-properties-common
+#Installation des dépôts
+RUN add-apt-repository -y ppa:ethereum/ethereum && add-apt-repository -y ppa:ethereum/ethereum-dev
+#Mise à jour pour que les nouveaux dépôts soient pris en compte
+RUN apt-get update && apt-get install -y build-essential golang ethereum eth git
+
+
+#Créations des dossiers et installations des fichiers
+
+#Création du dossier du fichier de genèse
+RUN mkdir -p ~/blockchain/genesis_folder
+#Téléchargement du fichier de genèse
+RUN git clone https://github.com/vttotor98/scripts_blockchain/
+RUN mv scripts/genesis.json ~/blockchain/genesis_folder/
+
+#Initialistion de la blockchain
+
+#initialisation de GEth
+RUN geth --datadir ~/blockchain/.ethereum_private init ~/blockchain/genesis_folder/
