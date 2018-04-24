@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y build-essential golang ethereum eth git
 #Création du dossier du fichier de genèse
 RUN mkdir -p ~/blockchain/genesis_folder
 RUN git clone https://github.com/vttotor98/genesis_file/
+#Déplacement du fichier de genèse
 RUN mv genesis_file/genesis.json ~/blockchain/genesis_folder/
 
 #Initialistion de la blockchain
@@ -28,5 +29,4 @@ RUN mv genesis_file/genesis.json ~/blockchain/genesis_folder/
 #Initialisation de GEth
 RUN geth --datadir ~/blockchain/.ethereum_private init ~/blockchain/genesis_folder/
 #Démarrage du noeud en utilisant un script
-ADD run.sh .
-ENTRYPOINT ["bash", "/run.sh"]
+RUN genesis_file/start.sh
