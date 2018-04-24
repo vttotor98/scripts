@@ -20,8 +20,8 @@ RUN apt-get update && apt-get install -y build-essential golang ethereum eth git
 
 #Création du dossier du fichier de genèse
 RUN mkdir -p ~/blockchain/genesis_folder
-RUN git clone https://github.com/vttotor98/scripts_blockchain_docker/
-RUN mv scripts_blockchain_docker/genesis.json ~/blockchain/genesis_folder/
+RUN git clone https://github.com/vttotor98/genesis_file/
+RUN mv genesis_file/genesis.json ~/blockchain/genesis_folder/
 
 #Initialistion de la blockchain
 
