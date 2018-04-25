@@ -8,13 +8,13 @@ sudo apt-get install -y build-essential golang software-properties-common ethere
 
 #faut créer le dossier du fichier json 
 mkdir -p ~/blockchain/genesis_folder
-git clone https://github.com/vttotor98/scripts/
-mv scripts/firstGenesis.json ~/blockchain/genesis_folder/
-#faut faire gaffe quand on exécute la commande (id blockchain par exemple)
+git clone https://github.com/vttotor98/genesis_file/
+mv genesis_file/genesis.json ~/blockchain/genesis_folder/
+#attention à l'exécution la commande à l'id de la blockchain
 geth --datadir ~/blockchain/.ethereum_private init ~/blockchain/genesis_folder/firstGenesis.json 
 
-#Démarage du premier noeuds faire gaffe aux paramètres 
-echo "Nom du noeud ?"
+#Démarage du premier noeuds, vérifier les paramètres 
+echo "Comment vous voulez appeller ce noeud ?"
 read node_name
 geth --identity $node_name init ~/blockchain/genesis_folder/firstGenesis.json --datadir ~/blockchain/.ethereum_private/ACPrivateChain
 echo “pour quitter faire Ctrl + C”
