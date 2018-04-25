@@ -9,8 +9,7 @@ FROM ubuntu
 #Installation des différents paquets et dépôts nécessaires sous docker
 
 #Installation de software-properties-common en premier car contient add-apt-repository
-RUN apt-get update 
-RUN apt-get upgrade -y
+RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y git
 
