@@ -5,7 +5,7 @@
 add-apt-repository -y ppa:ethereum/ethereum
 add-apt-repository -y ppa:ethereum/ethereum-dev
 apt-get update
-apt-get install -y build-essential golang software-properties-common ethereum eth
+apt-get install -y build-essential golang software-properties-common ethereum eth git
 
 
 #Création du dossier du fichier json 
