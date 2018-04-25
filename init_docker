@@ -3,7 +3,7 @@
 
 
 #A partir d'une image Ubuntu
-RUN ubuntu
+FROM ubuntu
 
 
 #Installation des différents paquets et dépôts nécessaires sous docker
