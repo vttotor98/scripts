@@ -13,5 +13,9 @@ RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y git
 
+#Initialisation et installation
+
+#Récupération des données
+git clone https://github.com/vttotor98/genesis_files/
 #Appel à la fonction install_docker.sh qui est une version adaptée de install_os.sh pour docker
 RUN genesis_files/install_docker.sh
