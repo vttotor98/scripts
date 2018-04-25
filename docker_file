@@ -12,6 +12,7 @@ RUN ubuntu
 RUN apt-get update 
 RUN apt-get upgrade
 RUN apt-get install software-properties-common
+RUN apt-get install git
 
 #Appel à la fonction install_docker.sh qui est une version adaptée de install_os.sh pour docker
-RUN install_docker.sh
+RUN genesis_files/install_docker.sh
