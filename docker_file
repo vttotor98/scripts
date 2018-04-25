@@ -6,27 +6,12 @@
 RUN ubuntu
 
 
-#Installation des différents paquets et dépôts nécessaires
+#Installation des différents paquets et dépôts nécessaires sous docker
 
 #Installation de software-properties-common en premier car contient add-apt-repository
-RUN apt-get update && apt-get upgrade && apt-get install software-properties-common
-#Installation des dépôts
-RUN add-apt-repository -y ppa:ethereum/ethereum && add-apt-repository -y ppa:ethereum/ethereum-dev
-#Mise à jour pour que les nouveaux dépôts soient pris en compte
-RUN apt-get update && apt-get install -y build-essential golang ethereum eth git
+RUN apt-get update 
+RUN apt-get upgrade
+RUN apt-get install software-properties-common
 
-
-#Créations des dossiers et installations des fichiers
-
-#Création du dossier du fichier de genèse
-RUN mkdir -p ~/blockchain/genesis_folder
-RUN git clone https://github.com/vttotor98/genesis_file/
-#Déplacement du fichier de genèse
-RUN mv genesis_file/genesis.json ~/blockchain/genesis_folder/
-
-#Initialistion de la blockchain
-
-#Initialisation de GEth
-RUN geth --datadir ~/blockchain/.ethereum_private init ~/blockchain/genesis_folder/
-#Démarrage du noeud en utilisant un script
-RUN genesis_file/start.sh
+#Appel à la fonction install_docker.sh qui est une version adaptée de install_os.sh pour docker
+RUN install_docker.sh
