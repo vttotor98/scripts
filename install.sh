@@ -1,18 +1,18 @@
 #!/bin/bash
 #Author : Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
-
+#Installation des dépôts et paquest nécessaires
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo add-apt-repository -y ppa:ethereum/ethereum-dev
 sudo apt-get update
 sudo apt-get install -y build-essential golang software-properties-common ethereum eth
 
 
-#faut créer le dossier du fichier json 
+#Création du dossier du fichier json 
 mkdir -p ~/blockchain/genesis_folder
 git clone https://github.com/vttotor98/genesis_file/
 mv genesis_file/genesis.json ~/blockchain/genesis_folder/
-#attention à l'exécution la commande à l'id de la blockchain
+#Lors de l'exécution de la commande attention à l'id de la blockchain
 geth --datadir ~/blockchain/.ethereum_private init ~/blockchain/genesis_folder/firstGenesis.json 
 
 #Démarage du premier noeuds, vérifier les paramètres 
