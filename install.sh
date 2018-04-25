@@ -1,4 +1,6 @@
 #!/bin/bash
+#Author : Victor TIREBAQUE for Agaetis Clermont-Ferrand
+
 
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo add-apt-repository -y ppa:ethereum/ethereum-dev
