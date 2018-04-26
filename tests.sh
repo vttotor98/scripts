@@ -1,6 +1,7 @@
 #!/bin/bash
 #Author : Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
+#scripts afin de supprimer les img docker que l'on veut pour repartir de 0
 docker images
 read var
 docker rmi -f $var
