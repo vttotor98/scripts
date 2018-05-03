@@ -15,6 +15,4 @@ git clone https://github.com/vttotor98/scripts
 docker images
 
 #Exécution del'image
-chmod +x start.sh
-mv ~/scripts/start.sh / 
-/start.sh
+docker build -f ~/scripts/init_docker .
