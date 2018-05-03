@@ -15,5 +15,5 @@ git clone https://github.com/vttotor98/scripts
 docker images
 
 #Exécution de l'image
-chmod +x initial_start.sh
+sudo chmod +x ~/scripts/initial_start.sh
 ~/scripts/initial_start.sh
