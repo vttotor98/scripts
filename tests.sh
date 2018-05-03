@@ -16,4 +16,5 @@ docker images
 
 #Exécution del'image
 chmod +x start.sh
-~/scripts/start.sh
+mv ~/scripts/start.sh / 
+/start.sh
