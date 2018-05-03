@@ -10,6 +10,10 @@ docker rmi -f $var
 #Suppression de scripts pour mettre à jour ou le télécharger pour la première
 rm -rf scripts
 
+#Téléchargement des scripts
 git clone https://github.com/vttotor98/scripts
 docker images
-docker build -f ~/scripts/init_docker .
+
+#Exécution del'image
+chmod +x start.sh
+./start.sh
