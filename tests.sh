@@ -16,4 +16,4 @@ docker images
 
 #Exécution de l'image
 sudo chmod +x ~/scripts/initial_start.sh
-~/scripts/initial_start.sh
+sudo ~/scripts/initial_start.sh
