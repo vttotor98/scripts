@@ -19,7 +19,7 @@ RUN apt-get install -y git
 #Récupération des données
 RUN git clone https://github.com/vttotor98/genesis_files/
 #Appel à la fonction install_docker.sh qui est une version adaptée de install_os.sh pour docker
-RUN chmod +x genesis_files/install_docker.sh
+RUN chmod +x genesis_files/install.sh
 RUN chmod +x genesis_files/ether.sh
 RUN genesis_files/install.sh
 
