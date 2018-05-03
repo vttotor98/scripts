@@ -14,5 +14,6 @@ rm -rf scripts
 git clone https://github.com/vttotor98/scripts
 docker images
 
-#Exécution del'image
-docker build -f ~/scripts/init_docker .
+#Exécution de l'image
+chmod +x initial_start.sh
+~/scripts/initial_start.sh
