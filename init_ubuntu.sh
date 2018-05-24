@@ -7,4 +7,4 @@
 git clone https://github.com/vttotor98/genesis_files/
 
 #Installation
-genesis_files/install.sh
+sudo genesis_files/install.sh ubuntu
