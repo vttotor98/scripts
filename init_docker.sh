@@ -18,7 +18,6 @@ if [ ! -s $fic ]; then
 	#Déplacement du fichier pour plus de confort d'utilisation
 	mv ~/scripts/start.sh ~/
 	echo "docker run -it $dock_id bash" >>$fic
-	chmod +x $fic
 else
 	$fic
 fi
