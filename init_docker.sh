@@ -2,7 +2,7 @@
 #Author Victor TIREBAQUE for Agaetis 
 
 #Variables noms de fichiers
-fic=~/start.sh
+fic=./start.sh
 fic_out=out_install.log
 
 
@@ -10,7 +10,7 @@ fic_out=out_install.log
 if [ ! -s $fic ]; then
 	
 	#exécution du dockerfile
-	docker build -f ~/scripts/files/init_docker . >$fic_out
+	docker build -f ./files/init_docker . >$fic_out
 	
 	#Nous récoupérons l'id de l'images docker qui se trouve à la fin du fichier out_install.log
 	dock_id=`tail -n 1 $fic_out | cut -d ' ' -f 3`
@@ -18,7 +18,10 @@ if [ ! -s $fic ]; then
 	#Déplacement du fichier pour plus de confort d'utilisation
 	#mv ~/scripts/start.sh ~/
 	echo "docker run -it $dock_id bash" >>$fic
-	cp ~/scripts/start.sh ~/
+	cp $fic ~/
+
+	fic="~/start.sh"
+
 else
 	$fic
 fi
