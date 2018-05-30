@@ -2,7 +2,8 @@
 #Author Victor TIREBAQUE for Agaetis 
 
 #Variables noms de fichiers
-fic=./start.sh
+fic="~/start.sh"
+fic_s="./start.sh"
 fic_out=out_install.log
 
 
@@ -17,10 +18,8 @@ if [ ! -s $fic ]; then
 	
 	#Déplacement du fichier pour plus de confort d'utilisation
 	#mv ~/scripts/start.sh ~/
-	echo "docker run -it $dock_id bash" >>$fic
-	cp $fic ~/
-
-	fic="~/start.sh"
+	echo "docker run -it $dock_id bash" >>$fic_s
+	cp $fic_s ~/
 
 else
 	$fic
